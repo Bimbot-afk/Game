@@ -11,14 +11,17 @@ config_version=5
 [application]
 
 config/name="gameee"
-run/main_scene="uid://cr0nflacrymbw"
+run/main_scene="uid://cw3apnj6m2w13"
 config/features=PackedStringArray("4.7", "Mobile")
-config/icon="res://icon.svg"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [input]
 
@@ -45,9 +48,9 @@ left={
 [physics]
 
 3d/physics_engine="Jolt Physics"
-2d/default_gravity=270.7359999999999
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
