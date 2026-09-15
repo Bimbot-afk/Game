@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ce6bu7dav8x3l" path="res://images/assets(tiles)/IndustrialTile_14.png" id="1_bswci"]
 [ext_resource type="Script" uid="uid://l70k4s31t10f" path="res://scenes/character_body_2d.gd" id="2_5xbjy"]
-[ext_resource type="Texture2D" uid="uid://clnm4cjr4xlt5" path="res://images/Gemini_Generated_Image_ldkdm4ldkdm4ldkd-removebg-preview.png" id="3_rus8k"]
+[ext_resource type="Texture2D" uid="uid://clnm4cjr4xlt5" path="res://images/character_sprite.png" id="3_rus8k"]
 [ext_resource type="Texture2D" uid="uid://bsskopeta5r3g" path="res://images/Background.png" id="4_5xbjy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xbjy"]
@@ -233,7 +233,7 @@ position = Vector2(170, 91)
 scale = Vector2(1.0070423, 0.93373495)
 sprite_frames = SubResource("SpriteFrames_0rfmd")
 animation = &"shoot"
-frame_progress = 0.8302543
+frame_progress = 0.6021059
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=755022888]
 position = Vector2(172.00006, 94.999985)
