@@ -14,6 +14,10 @@ config/name="gameee"
 run/main_scene="uid://cw3apnj6m2w13"
 config/features=PackedStringArray("4.7", "Mobile")
 
+[autoload]
+
+GlobalCoin="*uid://dej331giqwxsg"
+
 [display]
 
 window/stretch/mode="canvas_items"

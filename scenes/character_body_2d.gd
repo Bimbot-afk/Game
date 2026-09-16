@@ -33,4 +33,4 @@ func _physics_process(delta: float) -> void:
 		animation_player.play("idle")
 		
 	if velocity.x !=0:
-		$AnimatedSprite2D.flip_h = velocity.x < 0
+		$AnimatedSprite2D.flip_h = velocity.x < 0# Replace with function body.
