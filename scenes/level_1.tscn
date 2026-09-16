@@ -268,9 +268,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s7g0b")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"shoot",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_isnrb"]
@@ -291,10 +291,10 @@ script = ExtResource("7_go7sj")
 position = Vector2(0.6699066, -4.7783012)
 scale = Vector2(1.0070422, 0.9337349)
 sprite_frames = SubResource("SpriteFrames_0rfmd")
-animation = &"jump"
+animation = &"shoot"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trauma_boy" unique_id=5680588]
-position = Vector2(-0.6699085, 0)
+position = Vector2(5.3592477, 0.6826135)
 scale = Vector2(1.0852416, -1.1486276)
 shape = SubResource("RectangleShape2D_isnrb")
 
@@ -315,6 +315,9 @@ script = ExtResource("9_go7sj")
 position = Vector2(221.06888, -133.79227)
 scale = Vector2(0.8977566, 0.9053015)
 texture = ExtResource("10_7gny6")
+
+[node name="bulletspawn" type="Node2D" parent="Trauma_boy" unique_id=1246648806]
+position = Vector2(23.446697, -10.921818)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=944357701]
 scroll_offset = Vector2(2, 1)
