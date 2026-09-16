@@ -88,6 +88,9 @@ sources/5 = SubResource("TileSetAtlasSource_7gny6")
 sources/6 = SubResource("TileSetAtlasSource_15mv3")
 sources/7 = SubResource("TileSetAtlasSource_2aecg")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isnrb"]
+size = Vector2(34.5, 55.613586)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_5xbjy"]
 atlas = ExtResource("3_rus8k")
 region = Rect2(213, 0, 71, 83)
@@ -273,9 +276,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_isnrb"]
-size = Vector2(34.5, 55.613586)
-
 [node name="level1" type="Node2D" unique_id=968909791]
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1650816168]
@@ -287,16 +287,20 @@ position = Vector2(79, 336)
 scale = Vector2(1.4927474, 1.4649577)
 script = ExtResource("7_go7sj")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trauma_boy" unique_id=5680588]
+position = Vector2(3.3495283, -1.3652233)
+scale = Vector2(1.0852416, -1.1486276)
+shape = SubResource("RectangleShape2D_isnrb")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Trauma_boy" unique_id=1863239210]
-position = Vector2(0.6699066, -4.7783012)
+position = Vector2(3.3495293, -6.143524)
 scale = Vector2(1.0070422, 0.9337349)
 sprite_frames = SubResource("SpriteFrames_0rfmd")
 animation = &"shoot"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Trauma_boy" unique_id=5680588]
-position = Vector2(5.3592477, 0.6826135)
-scale = Vector2(1.0852416, -1.1486276)
-shape = SubResource("RectangleShape2D_isnrb")
+[node name="bulletspawn" type="Node2D" parent="Trauma_boy" unique_id=1246648806]
+position = Vector2(23.446701, -10.921814)
+scale = Vector2(0.99999994, 1)
 
 [node name="Camera2D" type="Camera2D" parent="Trauma_boy" unique_id=755022888]
 position = Vector2(180.87454, -77.81796)
@@ -315,9 +319,6 @@ script = ExtResource("9_go7sj")
 position = Vector2(221.06888, -133.79227)
 scale = Vector2(0.8977566, 0.9053015)
 texture = ExtResource("10_7gny6")
-
-[node name="bulletspawn" type="Node2D" parent="Trauma_boy" unique_id=1246648806]
-position = Vector2(23.446697, -10.921818)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=944357701]
 scroll_offset = Vector2(2, 1)
