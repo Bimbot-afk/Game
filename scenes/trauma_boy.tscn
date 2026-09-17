@@ -4,11 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://t3ok4guhqqm6" path="res://images/character_sprite_2.png" id="2_vng0r"]
 [ext_resource type="Texture2D" uid="uid://clnm4cjr4xlt5" path="res://images/character_sprite.png" id="3_2abao"]
 [ext_resource type="Script" uid="uid://sclp8wf1rrqe" path="res://scripts/coins.gd" id="4_1e3y6"]
-[ext_resource type="Script" uid="uid://cpn4niii6loyx" path="res://scenes/animated_sprite_2d.gd" id="4_vng0r"]
 [ext_resource type="Texture2D" uid="uid://derwv8iqrqwl1" path="res://images/coin_1.png" id="5_3f3u5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_isnrb"]
-size = Vector2(34.5, 56.332535)
+size = Vector2(34.5, 50.749138)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rfmd"]
 size = Vector2(30.145756, 45.735115)
@@ -121,7 +120,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"crouched shoot",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -209,29 +208,28 @@ scale = Vector2(1.4927474, 1.4649577)
 script = ExtResource("1_7xyw3")
 
 [node name="CollisionStand" type="CollisionShape2D" parent="." unique_id=1743499269]
-position = Vector2(3.3495293, -1.7781372)
+position = Vector2(3.3495293, -0.88905334)
 scale = Vector2(1.0852416, -1.1486276)
 shape = SubResource("RectangleShape2D_isnrb")
 
 [node name="CollisionCrouch" type="CollisionShape2D" parent="." unique_id=2098531683]
-position = Vector2(-0.3349533, 7.850052)
+position = Vector2(-4.7683716e-07, 5.460904)
 scale = Vector2(0.9999999, 1)
 shape = SubResource("RectangleShape2D_0rfmd")
 disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=54965936]
-position = Vector2(-1.3398108, -6.143524)
+position = Vector2(-1.3398119, -0.68261576)
 scale = Vector2(1.0070422, 0.9337349)
 sprite_frames = SubResource("SpriteFrames_0rfmd")
-animation = &"run"
-script = ExtResource("4_vng0r")
+animation = &"crouched shoot"
 
 [node name="bulletspawn" type="Node2D" parent="." unique_id=988606275]
-position = Vector2(18.757362, -14.334882)
+position = Vector2(19.427269, -12.287041)
 scale = Vector2(0.99999994, 1)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1100172861]
-position = Vector2(180.87454, -77.81796)
+position = Vector2(8.038868, -84.64409)
 scale = Vector2(0.99999994, 0.99999994)
 zoom = Vector2(1.5, 1.5)
 

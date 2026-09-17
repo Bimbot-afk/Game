@@ -11,6 +11,14 @@ region = Rect2(0, 12, 76, 122)
 atlas = ExtResource("1_7p1mj")
 region = Rect2(355, 12, 71, 97)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uy6h"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(78, 378, 78, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4w8v"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(156, 378, 78, 122)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwavj"]
 atlas = ExtResource("1_7p1mj")
 region = Rect2(76, 256, 76, 122)
@@ -35,10 +43,6 @@ region = Rect2(143, 134, 71, 122)
 atlas = ExtResource("1_7p1mj")
 region = Rect2(214, 134, 71, 122)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_otmr2"]
-atlas = ExtResource("1_7p1mj")
-region = Rect2(285, 134, 71, 122)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_7p1mj"]
 animations = [{
 "frames": [{
@@ -54,6 +58,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_5uy6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4w8v")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_xwavj")
 }, {
 "duration": 1.0,
@@ -62,7 +77,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_md484")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"shoot",
 "speed": 10.0
 }, {
@@ -75,35 +90,53 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w8i8w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_otmr2")
 }],
-"loop": 1,
+"loop": 2,
 "name": &"walk",
-"speed": 10.0
+"speed": 15.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rfmd"]
-size = Vector2(47, 91)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_isnrb"]
-size = Vector2(52, 81)
+size = Vector2(52, 77)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=27018331]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rfmd"]
+size = Vector2(62.5, 88.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sp74k"]
+size = Vector2(59.5, 13)
+
+[node name="enemy" type="CharacterBody2D" unique_id=27018331]
 script = ExtResource("1_md0e3")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1580575676]
-position = Vector2(5, -52)
-sprite_frames = SubResource("SpriteFrames_7p1mj")
-animation = &"shoot"
-autoplay = "walk"
+[node name="enemyBullet" type="Node2D" parent="." unique_id=1744224086]
+position = Vector2(-79, -71)
 
-[node name="walk" type="CollisionShape2D" parent="." unique_id=789551214]
-position = Vector2(6, -48)
-shape = SubResource("RectangleShape2D_0rfmd")
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1580575676]
+position = Vector2(-102, -71)
+sprite_frames = SubResource("SpriteFrames_7p1mj")
+animation = &"idle"
+autoplay = "walk"
+frame_progress = 0.051173303
 
 [node name="shoot" type="CollisionShape2D" parent="." unique_id=51516790]
-position = Vector2(-5, -36.5)
+position = Vector2(-113, -68)
 shape = SubResource("RectangleShape2D_isnrb")
 disabled = true
+
+[node name="walk" type="CollisionShape2D" parent="." unique_id=789551214]
+position = Vector2(-109, -74)
+shape = SubResource("RectangleShape2D_0rfmd")
+
+[node name="death" type="CollisionShape2D" parent="." unique_id=1648952406]
+position = Vector2(-108, -38)
+shape = SubResource("RectangleShape2D_sp74k")
+disabled = true
+
+[node name="enemy2dArea" type="Area2D" parent="." unique_id=1577490802]
+position = Vector2(1, -2)
+
+[node name="walk2" type="CollisionShape2D" parent="enemy2dArea" unique_id=1952087333]
+position = Vector2(-110, -71)
+shape = SubResource("RectangleShape2D_0rfmd")
+
+[connection signal="area_entered" from="enemy2dArea" to="." method="_on_area_2d_area_entered"]

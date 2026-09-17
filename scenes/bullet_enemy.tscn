@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b2elkv2c0lr6y"]
+
+[ext_resource type="Script" uid="uid://bn8bsxhevsalm" path="res://scenes/bullet_enemy.gd" id="1_resul"]
+[ext_resource type="Texture2D" uid="uid://bpbiseyy5h3u5" path="res://images/414-4140703_laser-bullet-pixel-art-hd-png-download.png" id="2_hmyi3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rfmd"]
+size = Vector2(32, 8)
+
+[node name="enemy_proyectile" type="Area2D" unique_id=974365261]
+script = ExtResource("1_resul")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=468658784]
+position = Vector2(-11, -5)
+scale = Vector2(0.0656923, 0.060388368)
+texture = ExtResource("2_hmyi3")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1168831336]
+position = Vector2(-16, -5)
+rect = Rect2(-10, -5, 32, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=481141691]
+position = Vector2(-10, -6)
+shape = SubResource("RectangleShape2D_0rfmd")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

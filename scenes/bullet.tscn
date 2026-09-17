@@ -6,18 +6,24 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rfmd"]
 size = Vector2(20, 7)
 
-[node name="bullet" type="CharacterBody2D" unique_id=1911883034]
+[node name="bullet" type="Area2D" unique_id=507885979]
 script = ExtResource("1_y25gk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=870923905]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=870923905]
 position = Vector2(7, 8.5)
 shape = SubResource("RectangleShape2D_0rfmd")
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=468658784]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1168831336]
+position = Vector2(7, 3)
+rect = Rect2(-10, 1, 20, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1432610033]
+position = Vector2(7, 8.5)
+shape = SubResource("RectangleShape2D_0rfmd")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1759963843]
 position = Vector2(1.9073486e-06, 9.536743e-07)
 scale = Vector2(0.11538459, 0.092205316)
 texture = ExtResource("2_l5glv")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1168831336]
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
