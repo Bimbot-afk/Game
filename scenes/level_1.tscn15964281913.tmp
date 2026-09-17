@@ -108,7 +108,7 @@ texture = ExtResource("4_5xbjy")
 [node name="Sprite2D2" type="Sprite2D" parent="Parallax2D" unique_id=1223567577]
 visibility_layer = 3
 z_index = -1
-position = Vector2(3050.0002, -554)
+position = Vector2(3064, -568.0001)
 rotation = -3.1415925
 scale = Vector2(-7.048782, 2.673139)
 skew = 0.085685134
@@ -148,3 +148,6 @@ position = Vector2(914, -108)
 
 [node name="CharacterBody2D" parent="." unique_id=27018331 instance=ExtResource("7_2y5yt")]
 position = Vector2(1092, 379)
+speed = null
+change_direction_time = null
+player_path = null
