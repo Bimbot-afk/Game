@@ -116,7 +116,7 @@ position = Vector2(-102, -71)
 sprite_frames = SubResource("SpriteFrames_7p1mj")
 animation = &"idle"
 autoplay = "walk"
-frame_progress = 0.051173303
+frame_progress = 0.35327297
 
 [node name="shoot" type="CollisionShape2D" parent="." unique_id=51516790]
 position = Vector2(-113, -68)

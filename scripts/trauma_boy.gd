@@ -8,6 +8,8 @@ extends CharacterBody2D
 var bullet = preload("res://scenes/bullet.tscn")
 var is_shooting: bool = false
 var is_down: bool = false
+var is_dead: bool = false
+var is_reliving: bool = false
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
@@ -19,11 +21,17 @@ func _ready() -> void:
 	col_crouch.disabled = true
 
 func _physics_process(delta: float) -> void:
+	# Compuerta de colapso de estado: si está muerto, solo obedece a la gravedad.
+	if is_dead or is_reliving:
+		if not is_on_floor():
+			velocity += get_gravity() * delta
+		move_and_slide()
+		return
+
 	# 1. Cambiar colisiones al agacharse / levantarse
 	var wants_down := Input.is_action_pressed("down") and is_on_floor()
 	if wants_down != is_down:
 		is_down = wants_down
-		# set_deferred evita errores físicos durante el frame actual
 		col_stand.set_deferred("disabled", is_down)
 		col_crouch.set_deferred("disabled", !is_down)
 
@@ -60,6 +68,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	actualizar_animaciones(direction)
+	
 	move_and_slide()
 
 func shoot() -> void:
@@ -89,6 +98,11 @@ func actualizar_animaciones(direction: float) -> void:
 			anim.play("idle")
 
 func _on_animation_finished() -> void:
+	if anim.animation == "relif":
+		is_reliving = false
+		anim.play("idle")
+		return
+
 	if anim.animation in ["shoot", "jump shoot", "crouched shoot"]:
 		is_shooting = false
 		if is_down:
@@ -97,3 +111,36 @@ func _on_animation_finished() -> void:
 			anim.play("jump")
 		else:
 			anim.play("idle")
+	
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if is_dead or is_reliving:
+		return
+
+	var body_area = area.name.to_lower()
+	
+	if body_area.contains("proyectile") or area.is_in_group("proyectile"):
+		area.queue_free() 
+		GlobalLife.refresh_life(1)
+		
+		if GlobalLife.life <= 0:
+			velocity = Vector2.ZERO	
+			Hearths.refresh_hearths(1)
+			
+			if Hearths.hearths > 0:
+				is_reliving = true
+				
+				GlobalLife.life = 5
+				
+				relife()
+			else:
+				is_dead = true
+				dead()
+			
+func relife():
+	anim.play("death")
+	anim.play("relif")
+func dead():
+	anim.play("death")
+	

@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://t3ok4guhqqm6" path="res://images/character_sprite_2.png" id="2_vng0r"]
 [ext_resource type="Texture2D" uid="uid://clnm4cjr4xlt5" path="res://images/character_sprite.png" id="3_2abao"]
 [ext_resource type="Script" uid="uid://sclp8wf1rrqe" path="res://scripts/coins.gd" id="4_1e3y6"]
-[ext_resource type="Script" uid="uid://cxy4xqwo5ds7w" path="res://scenes/hearths_node.gd" id="4_2abao"]
-[ext_resource type="Texture2D" uid="uid://c4ous5yiraffq" path="res://images/image-removebg-preview (2).png" id="4_vng0r"]
 [ext_resource type="Texture2D" uid="uid://derwv8iqrqwl1" path="res://images/coin_1.png" id="5_3f3u5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_isnrb"]
@@ -86,38 +84,6 @@ region = Rect2(213, 166, 71, 83)
 atlas = ExtResource("2_vng0r")
 region = Rect2(73, 334, 71, 83)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8yybd"]
-atlas = ExtResource("3_2abao")
-region = Rect2(355, 2, 71, 83)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a838i"]
-atlas = ExtResource("3_2abao")
-region = Rect2(71, 334, 71, 83)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_445pn"]
-atlas = ExtResource("3_2abao")
-region = Rect2(213, 334, 71, 83)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pau18"]
-atlas = ExtResource("3_2abao")
-region = Rect2(71, 168, 71, 83)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_osx4k"]
-atlas = ExtResource("3_2abao")
-region = Rect2(142, 168, 71, 83)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ke4n"]
-atlas = ExtResource("3_2abao")
-region = Rect2(213, 168, 71, 83)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_37txn"]
-atlas = ExtResource("3_2abao")
-region = Rect2(284, 168, 71, 83)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c1hgt"]
-atlas = ExtResource("3_2abao")
-region = Rect2(355, 168, 71, 83)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_isj1j"]
 atlas = ExtResource("3_2abao")
 region = Rect2(71, 83, 71, 83)
@@ -191,12 +157,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s4755")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yf853")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yf853")
 }],
 "loop": 0,
 "name": &"death",
@@ -252,53 +212,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8yybd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a838i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_445pn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_445pn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_445pn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_445pn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_445pn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_445pn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_445pn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pau18")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_osx4k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2ke4n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_37txn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c1hgt")
-}],
-"loop": 0,
-"name": &"relif",
-"speed": 9.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_isj1j")
 }, {
 "duration": 1.0,
@@ -329,35 +242,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4v7bd"]
-atlas = ExtResource("4_vng0r")
-region = Rect2(0, 334, 125, 166)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f5d8q"]
-atlas = ExtResource("4_vng0r")
-region = Rect2(125, 334, 125, 166)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sohmy"]
-atlas = ExtResource("4_vng0r")
-region = Rect2(375, 334, 125, 166)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_isnrb"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4v7bd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f5d8q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sohmy")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 9.0
-}]
-
 [node name="Trauma_boy" type="CharacterBody2D" unique_id=923023277]
 position = Vector2(79, 336)
 scale = Vector2(1.4927474, 1.4649577)
@@ -378,7 +262,8 @@ disabled = true
 position = Vector2(-1.3398119, -0.68261576)
 scale = Vector2(1.0070422, 0.9337349)
 sprite_frames = SubResource("SpriteFrames_0rfmd")
-animation = &"relif"
+animation = &"death"
+frame_progress = 1.0
 
 [node name="bulletspawn" type="Node2D" parent="." unique_id=988606275]
 position = Vector2(19.427269, -12.287041)
@@ -389,46 +274,6 @@ position = Vector2(8.038868, -84.64409)
 scale = Vector2(0.99999994, 0.99999994)
 zoom = Vector2(1.5, 1.5)
 
-[node name="hearths" type="Node2D" parent="Camera2D" unique_id=1743143631]
-position = Vector2(-159.43756, -128.33136)
-scale = Vector2(0.22667883, 0.19570263)
-script = ExtResource("4_2abao")
-
-[node name="hearth5" type="AnimatedSprite2D" parent="Camera2D/hearths" unique_id=450085470]
-position = Vector2(0, 4.5776367e-05)
-scale = Vector2(0.99999994, 0.99999994)
-sprite_frames = SubResource("SpriteFrames_isnrb")
-autoplay = "default"
-frame_progress = 0.84804034
-
-[node name="hearth4" type="AnimatedSprite2D" parent="Camera2D/hearths" unique_id=902631910]
-position = Vector2(-88.6593, -5.340576e-05)
-scale = Vector2(0.99999994, 0.99999994)
-sprite_frames = SubResource("SpriteFrames_isnrb")
-autoplay = "default"
-frame_progress = 0.4948221
-
-[node name="hearth" type="AnimatedSprite2D" parent="Camera2D/hearths" unique_id=76981583]
-position = Vector2(-366.45837, 0)
-scale = Vector2(0.99999994, 0.99999994)
-sprite_frames = SubResource("SpriteFrames_isnrb")
-autoplay = "default"
-frame_progress = 0.4262012
-
-[node name="hearth2" type="AnimatedSprite2D" parent="Camera2D/hearths" unique_id=569794815]
-position = Vector2(-265.97772, 0)
-scale = Vector2(0.99999994, 0.99999994)
-sprite_frames = SubResource("SpriteFrames_isnrb")
-autoplay = "default"
-frame_progress = 0.64115584
-
-[node name="hearth3" type="AnimatedSprite2D" parent="Camera2D/hearths" unique_id=1118198253]
-position = Vector2(-177.31836, 0)
-scale = Vector2(0.99999994, 0.99999994)
-sprite_frames = SubResource("SpriteFrames_isnrb")
-autoplay = "default"
-frame_progress = 0.15132345
-
 [node name="coins" type="Label" parent="Camera2D" unique_id=1568356126]
 offset_left = 230.4476
 offset_top = -146.07932
@@ -437,7 +282,7 @@ offset_bottom = -123.079315
 text = ": "
 script = ExtResource("4_1e3y6")
 
-[node name="coin" type="Sprite2D" parent="Camera2D" unique_id=1069661981]
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D" unique_id=1069661981]
 position = Vector2(221.06888, -133.79227)
 scale = Vector2(0.8977566, 0.9053015)
 texture = ExtResource("5_3f3u5")

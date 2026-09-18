@@ -17,6 +17,8 @@ config/features=PackedStringArray("4.7", "Mobile")
 [autoload]
 
 GlobalCoin="*uid://dej331giqwxsg"
+GlobalLife="*uid://bsjqhe7mo6o2y"
+Hearths="*uid://dra0p8csp4q6b"
 
 [display]
 
