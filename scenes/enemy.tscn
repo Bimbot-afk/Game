@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://c4rp4elykhb1y"]
 
-[ext_resource type="Texture2D" uid="uid://duvjr2m3w737o" path="res://images/enemy_sprite.png" id="1_7p1mj"]
+[ext_resource type="Texture2D" uid="uid://duvjr2m3w737o" path="res://images/diferent_images/enemy_sprite.png" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://03ehshra27xf" path="res://scenes/enemy.gd" id="1_md0e3"]
+[ext_resource type="AudioStream" uid="uid://7g31e0osj44r" path="res://images/sounds/piu_enemy.mp3" id="3_4ra3w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
 atlas = ExtResource("1_7p1mj")
@@ -138,5 +139,8 @@ position = Vector2(1, -2)
 [node name="walk2" type="CollisionShape2D" parent="enemy2dArea" unique_id=1952087333]
 position = Vector2(-110, -71)
 shape = SubResource("RectangleShape2D_0rfmd")
+
+[node name="piu_enemy" type="AudioStreamPlayer2D" parent="." unique_id=1470493341]
+stream = ExtResource("3_4ra3w")
 
 [connection signal="area_entered" from="enemy2dArea" to="." method="_on_area_2d_area_entered"]

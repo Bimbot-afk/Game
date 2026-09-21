@@ -20,6 +20,8 @@ var current_fire_rate: float = 0.0
 @onready var collision_shoot: CollisionShape2D = $shoot
 @onready var collision_death: CollisionShape2D = $death
 @onready var enemyBullet: Node2D = $enemyBullet
+@onready var pau_sound: AudioStreamPlayer2D = $piu_enemy
+
 
 # --- Variables de Estado Interno ---
 var bullet = preload("res://scenes/bullet_enemy.tscn")
@@ -126,6 +128,7 @@ func shoot() -> void:
 	new_bullet.direction_bullet = PI if anim.flip_h else 0.0
 	
 	new_bullet.global_position = global_position + Vector2(abs(spawn_pos.x) * dir_sign, spawn_pos.y)
+	pau_sound.play()
 	get_parent().add_child(new_bullet)
 
 func _handle_burst_shooting(delta: float) -> void:

@@ -4,6 +4,11 @@ extends CharacterBody2D
 @onready var col_stand: CollisionShape2D = $CollisionStand
 @onready var col_crouch: CollisionShape2D = $CollisionCrouch
 @onready var bulletspawn: Node2D = $bulletspawn
+@onready var piu_sound: AudioStreamPlayer2D = $piu_trauma
+@onready var hurth_sound: AudioStreamPlayer2D = $hurt_sound
+@onready var dead_sound: AudioStreamPlayer2D = $lose_hearth
+
+
 
 var bullet = preload("res://scenes/bullet.tscn")
 var is_shooting: bool = false
@@ -73,6 +78,7 @@ func _physics_process(delta: float) -> void:
 
 func shoot() -> void:
 	var new_bullet = bullet.instantiate()
+	piu_sound.play()
 	var spawn_pos = bulletspawn.position
 	
 	if is_down:
@@ -121,18 +127,21 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	var body_area = area.name.to_lower()
 	
 	if body_area.contains("proyectile") or area.is_in_group("proyectile"):
+		hurth_sound.play()
 		area.queue_free() 
 		GlobalLife.refresh_life(1)
 		
 		if GlobalLife.life <= 0:
 			velocity = Vector2.ZERO	
+			
+			# Sanitización de variables para evitar el interbloqueo
+			is_shooting = false
+			
 			Hearths.refresh_hearths(1)
 			
 			if Hearths.hearths > 0:
 				is_reliving = true
-				
 				GlobalLife.life = 5
-				
 				relife()
 			else:
 				is_dead = true
@@ -140,7 +149,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			
 func relife():
 	anim.play("death")
-	anim.play("relif")
+	dead_sound.play()
+	anim.play("relif")	
 func dead():
 	anim.play("death")
 	

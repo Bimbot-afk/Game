@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clnm4cjr4xlt5"
-path="res://.godot/imported/character_sprite.png-4cf33bf085bcf2b4e297982dada35809.ctex"
+uid="uid://bpbiseyy5h3u5"
+path="res://.godot/imported/414-4140703_laser-bullet-pixel-art-hd-png-download.png-b4f11e215d3a51d1ea896dc3b7383276.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/character_sprite.png"
-dest_files=["res://.godot/imported/character_sprite.png-4cf33bf085bcf2b4e297982dada35809.ctex"]
+source_file="res://images/diferent_images/414-4140703_laser-bullet-pixel-art-hd-png-download.png"
+dest_files=["res://.godot/imported/414-4140703_laser-bullet-pixel-art-hd-png-download.png-b4f11e215d3a51d1ea896dc3b7383276.ctex"]
 
 [params]
 

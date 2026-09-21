@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://blcxsrorkbpt6"]
 
 [ext_resource type="Script" uid="uid://fv7ctu20qtcl" path="res://scripts/trauma_boy.gd" id="1_7xyw3"]
-[ext_resource type="Texture2D" uid="uid://t3ok4guhqqm6" path="res://images/character_sprite_2.png" id="2_vng0r"]
-[ext_resource type="Texture2D" uid="uid://clnm4cjr4xlt5" path="res://images/character_sprite.png" id="3_2abao"]
+[ext_resource type="Texture2D" uid="uid://t3ok4guhqqm6" path="res://images/diferent_images/character_sprite_2.png" id="2_vng0r"]
+[ext_resource type="Texture2D" uid="uid://clnm4cjr4xlt5" path="res://images/diferent_images/character_sprite.png" id="3_2abao"]
 [ext_resource type="Script" uid="uid://sclp8wf1rrqe" path="res://scripts/coins.gd" id="4_1e3y6"]
 [ext_resource type="Script" uid="uid://cxy4xqwo5ds7w" path="res://scenes/hearths_node.gd" id="4_2abao"]
-[ext_resource type="Texture2D" uid="uid://c4ous5yiraffq" path="res://images/image-removebg-preview (2).png" id="4_vng0r"]
-[ext_resource type="Texture2D" uid="uid://derwv8iqrqwl1" path="res://images/coin_1.png" id="5_3f3u5"]
+[ext_resource type="Texture2D" uid="uid://c4ous5yiraffq" path="res://images/diferent_images/image-removebg-preview (2).png" id="4_vng0r"]
+[ext_resource type="Texture2D" uid="uid://derwv8iqrqwl1" path="res://images/diferent_images/coin_1.png" id="5_3f3u5"]
+[ext_resource type="AudioStream" uid="uid://buxbdh48tlatl" path="res://images/sounds/game_music.mp3" id="8_1e3y6"]
+[ext_resource type="AudioStream" uid="uid://cqut0sef6up6u" path="res://images/sounds/piu_trauma.mp3" id="9_3f3u5"]
+[ext_resource type="AudioStream" uid="uid://833efn2jterl" path="res://images/sounds/hurt_sound.mp3" id="10_4cpvd"]
+[ext_resource type="AudioStream" uid="uid://c1n5dtnp6h05w" path="res://images/sounds/dead.mp3" id="11_67ou8"]
+[ext_resource type="AudioStream" uid="uid://de43a0dmben6v" path="res://images/sounds/relif.mp3" id="11_r6mmp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_isnrb"]
 size = Vector2(34.5, 48.372005)
@@ -385,7 +390,7 @@ position = Vector2(19.427269, -12.287041)
 scale = Vector2(0.99999994, 1)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1100172861]
-position = Vector2(8.038868, -84.64409)
+position = Vector2(8.708774, -30.035)
 scale = Vector2(0.99999994, 0.99999994)
 zoom = Vector2(1.5, 1.5)
 
@@ -454,5 +459,30 @@ position = Vector2(0, 5.460907)
 scale = Vector2(0.9999998, 1)
 shape = SubResource("RectangleShape2D_0rfmd")
 disabled = true
+
+[node name="music_game" type="AudioStreamPlayer2D" parent="." unique_id=111121077]
+stream = ExtResource("8_1e3y6")
+volume_db = -14.579
+autoplay = true
+
+[node name="piu_trauma" type="AudioStreamPlayer2D" parent="." unique_id=3717947]
+scale = Vector2(0.99999994, 1)
+stream = ExtResource("9_3f3u5")
+volume_db = -15.551
+
+[node name="hurt_sound" type="AudioStreamPlayer2D" parent="." unique_id=610756746]
+scale = Vector2(0.9999999, 1)
+stream = ExtResource("10_4cpvd")
+volume_db = -9.72
+
+[node name="lose_hearth" type="AudioStreamPlayer2D" parent="." unique_id=1619375023]
+scale = Vector2(0.9999999, 1)
+stream = ExtResource("11_67ou8")
+volume_db = 7.776
+
+[node name="relif_sound" type="AudioStreamPlayer2D" parent="." unique_id=1266271414]
+scale = Vector2(0.9999999, 1)
+stream = ExtResource("11_r6mmp")
+volume_db = -16.574
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

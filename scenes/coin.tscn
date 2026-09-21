@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://d4hvide3xetq3"]
 
 [ext_resource type="Script" uid="uid://bauksb5gj0572" path="res://scripts/area_2d.gd" id="1_i64fm"]
-[ext_resource type="Texture2D" uid="uid://cfbyu332nt1ga" path="res://images/coin-Sheet.png" id="2_11l1o"]
+[ext_resource type="Texture2D" uid="uid://cfbyu332nt1ga" path="res://images/diferent_images/coin-Sheet.png" id="2_11l1o"]
+[ext_resource type="AudioStream" uid="uid://j865mmgor2r6" path="res://images/sounds/coin_sound.mp3" id="3_11l1o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e3sih"]
 radius = 15.264338
@@ -84,5 +85,9 @@ sprite_frames = SubResource("SpriteFrames_isnrb")
 animation = &"floating"
 autoplay = "floating"
 frame_progress = 0.20951407
+
+[node name="coin_sound" type="AudioStreamPlayer2D" parent="." unique_id=1524563114]
+stream = ExtResource("3_11l1o")
+volume_db = -6.369
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

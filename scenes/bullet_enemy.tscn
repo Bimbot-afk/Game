@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b2elkv2c0lr6y"]
 
 [ext_resource type="Script" uid="uid://bn8bsxhevsalm" path="res://scenes/bullet_enemy.gd" id="1_resul"]
-[ext_resource type="Texture2D" uid="uid://bpbiseyy5h3u5" path="res://images/414-4140703_laser-bullet-pixel-art-hd-png-download.png" id="2_hmyi3"]
+[ext_resource type="Texture2D" uid="uid://bpbiseyy5h3u5" path="res://images/diferent_images/414-4140703_laser-bullet-pixel-art-hd-png-download.png" id="2_hmyi3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rfmd"]
 size = Vector2(32, 8)

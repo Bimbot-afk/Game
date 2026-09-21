@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b1baqndkboo5l"]
 
 [ext_resource type="Script" uid="uid://bioy17cp1cqgx" path="res://scripts/bullet.gd" id="1_y25gk"]
-[ext_resource type="Texture2D" uid="uid://dw2ghq3k63utx" path="res://images/image-removebg-preview.png" id="2_l5glv"]
+[ext_resource type="Texture2D" uid="uid://yn3ll36x6lf8" path="res://images/diferent_images/ae4007960cdd8be.png" id="2_y25gk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rfmd"]
 size = Vector2(20, 7)
@@ -22,8 +22,8 @@ position = Vector2(7, 8.5)
 shape = SubResource("RectangleShape2D_0rfmd")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1759963843]
-position = Vector2(1.9073486e-06, 9.536743e-07)
+position = Vector2(8.999999, -3.5)
 scale = Vector2(0.11538459, 0.092205316)
-texture = ExtResource("2_l5glv")
+texture = ExtResource("2_y25gk")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
