@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dyxj12udhjmlh"]
+
+[ext_resource type="Script" uid="uid://dy8fva3j2yq3d" path="res://scripts/heath_colect.gd" id="1_qrdjt"]
+[ext_resource type="Texture2D" uid="uid://c4ous5yiraffq" path="res://images/diferent_images/image-removebg-preview (2).png" id="2_qrdjt"]
+[ext_resource type="AudioStream" uid="uid://de43a0dmben6v" path="res://images/sounds/relif.mp3" id="3_i3tni"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isnrb"]
+size = Vector2(554, 475)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8o5t"]
+atlas = ExtResource("2_qrdjt")
+region = Rect2(0, 332, 125, 166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3tni"]
+atlas = ExtResource("2_qrdjt")
+region = Rect2(125, 332, 125, 166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6enm"]
+atlas = ExtResource("2_qrdjt")
+region = Rect2(315, 332, 63, 166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11ifx"]
+atlas = ExtResource("2_qrdjt")
+region = Rect2(252, 332, 63, 166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2rb8"]
+atlas = ExtResource("2_qrdjt")
+region = Rect2(375, 332, 125, 166)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_isnrb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8o5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3tni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6enm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11ifx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2rb8")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 12.0
+}]
+
+[node name="heath_colect" type="Area2D" unique_id=1775247170]
+script = ExtResource("1_qrdjt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1039546094]
+position = Vector2(-5, -8)
+shape = SubResource("RectangleShape2D_isnrb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=889180372]
+position = Vector2(-28.000015, 127)
+scale = Vector2(7.482017, 4.7947097)
+sprite_frames = SubResource("SpriteFrames_isnrb")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame = 1
+frame_progress = 0.9408451
+
+[node name="relif_sound" type="AudioStreamPlayer2D" parent="." unique_id=1524563114]
+stream = ExtResource("3_i3tni")
+volume_db = -6.369
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

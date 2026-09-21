@@ -101,7 +101,7 @@ animations = [{
 size = Vector2(52, 77)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rfmd"]
-size = Vector2(62.5, 88.5)
+size = Vector2(62.5, 75.625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sp74k"]
 size = Vector2(59.5, 13)
@@ -110,26 +110,26 @@ size = Vector2(59.5, 13)
 script = ExtResource("1_md0e3")
 
 [node name="enemyBullet" type="Node2D" parent="." unique_id=1744224086]
-position = Vector2(-79, -71)
+position = Vector2(38, -49)
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1580575676]
-position = Vector2(-102, -71)
+position = Vector2(15, -49)
 sprite_frames = SubResource("SpriteFrames_7p1mj")
 animation = &"idle"
 autoplay = "walk"
 frame_progress = 0.35327297
 
 [node name="shoot" type="CollisionShape2D" parent="." unique_id=51516790]
-position = Vector2(-113, -68)
+position = Vector2(4, -46)
 shape = SubResource("RectangleShape2D_isnrb")
 disabled = true
 
 [node name="walk" type="CollisionShape2D" parent="." unique_id=789551214]
-position = Vector2(-109, -74)
+position = Vector2(8, -50.1875)
 shape = SubResource("RectangleShape2D_0rfmd")
 
 [node name="death" type="CollisionShape2D" parent="." unique_id=1648952406]
-position = Vector2(-108, -38)
+position = Vector2(9, -16)
 shape = SubResource("RectangleShape2D_sp74k")
 disabled = true
 
@@ -137,7 +137,7 @@ disabled = true
 position = Vector2(1, -2)
 
 [node name="walk2" type="CollisionShape2D" parent="enemy2dArea" unique_id=1952087333]
-position = Vector2(-110, -71)
+position = Vector2(7, -44.375)
 shape = SubResource("RectangleShape2D_0rfmd")
 
 [node name="piu_enemy" type="AudioStreamPlayer2D" parent="." unique_id=1470493341]
