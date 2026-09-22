@@ -181,7 +181,7 @@ position = Vector2(2686.0002, 204)
 scale = Vector2(0.06700029, 0.0705)
 
 [node name="Trauma_boy" parent="." unique_id=923023277 instance=ExtResource("9_e3sih")]
-position = Vector2(48.000977, 207)
+position = Vector2(82.00195, 6)
 
 [node name="enemy" parent="." unique_id=27018331 instance=ExtResource("7_2y5yt")]
 position = Vector2(1287, 260)

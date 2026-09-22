@@ -474,14 +474,14 @@ position = Vector2(221.06888, -133.79227)
 scale = Vector2(0.8977566, 0.9053015)
 texture = ExtResource("5_3f3u5")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=764887895]
+[node name="trauma_boy" type="Area2D" parent="." unique_id=764887895]
 
-[node name="CollisionStand2" type="CollisionShape2D" parent="Area2D" unique_id=1982870485]
+[node name="CollisionStand2" type="CollisionShape2D" parent="trauma_boy" unique_id=1982870485]
 position = Vector2(3.3495293, 0.47616577)
 scale = Vector2(1.0852416, -1.1486276)
 shape = SubResource("RectangleShape2D_isnrb")
 
-[node name="CollisionCrouch2" type="CollisionShape2D" parent="Area2D" unique_id=1859487795]
+[node name="CollisionCrouch2" type="CollisionShape2D" parent="trauma_boy" unique_id=1859487795]
 position = Vector2(0, 5.460907)
 scale = Vector2(0.9999998, 1)
 shape = SubResource("RectangleShape2D_0rfmd")
@@ -512,4 +512,4 @@ scale = Vector2(0.9999999, 1)
 stream = ExtResource("11_r6mmp")
 volume_db = -16.574
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="trauma_boy" to="." method="_on_area_2d_area_entered"]
