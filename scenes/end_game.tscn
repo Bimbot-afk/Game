@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://cy7mr58axtw5p"]
+
+[ext_resource type="Texture2D" uid="uid://bspy1a5jy8v5u" path="res://images/diferent_images/end_game (1).png" id="1_dpvxj"]
+[ext_resource type="Script" uid="uid://dp6qp33uyfl7d" path="res://scripts/end_game.gd" id="1_uwdrl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwdrl"]
+atlas = ExtResource("1_dpvxj")
+region = Rect2(8, 562, 498, 562)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0py74"]
+atlas = ExtResource("1_dpvxj")
+region = Rect2(506, 562, 498, 562)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pifh"]
+atlas = ExtResource("1_dpvxj")
+region = Rect2(1004, 562, 498, 562)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h6i1"]
+atlas = ExtResource("1_dpvxj")
+region = Rect2(1502, 562, 498, 562)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpvxj"]
+atlas = ExtResource("1_dpvxj")
+region = Rect2(506, 562, 498, 562)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plvne"]
+atlas = ExtResource("1_dpvxj")
+region = Rect2(8, 562, 498, 562)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lcay"]
+atlas = ExtResource("1_dpvxj")
+region = Rect2(1502, 0, 498, 562)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gb5xk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwdrl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0py74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pifh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h6i1")
+}],
+"loop": 0,
+"name": &"bye",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpvxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plvne")
+}],
+"loop": 1,
+"name": &"bye go",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lcay")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rfmd"]
+size = Vector2(394, 197)
+
+[node name="end game" type="Node2D" unique_id=2118892969]
+script = ExtResource("1_uwdrl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=160537585]
+position = Vector2(-76.00002, 7.9999847)
+scale = Vector2(1.2269075, 1.1539146)
+sprite_frames = SubResource("SpriteFrames_gb5xk")
+animation = &"bye go"
+autoplay = "bye go"
+frame_progress = 0.67144984
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2064394805]
+position = Vector2(-16, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1169280459]
+position = Vector2(-14, 15.5)
+shape = SubResource("RectangleShape2D_0rfmd")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

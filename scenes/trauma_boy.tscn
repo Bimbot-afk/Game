@@ -202,6 +202,33 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yf853")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf853")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf853")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf853")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf853")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf853")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf853")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf853")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf853")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf853")
 }],
 "loop": 0,
 "name": &"death",
@@ -383,7 +410,7 @@ disabled = true
 position = Vector2(-1.3398119, -0.68261576)
 scale = Vector2(1.0070422, 0.9337349)
 sprite_frames = SubResource("SpriteFrames_0rfmd")
-animation = &"relif"
+animation = &"death"
 
 [node name="bulletspawn" type="Node2D" parent="." unique_id=988606275]
 position = Vector2(19.427269, -12.287041)

@@ -71,3 +71,4 @@ down={
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.48110926, 0.20249453, 0.18482274, 1)

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dv28u3iwleqpr"]
+
+[node name="WIN" type="Node2D" unique_id=1336235972]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1844217283]
+
+[node name="Label" type="Label" parent="." unique_id=1855431058]
+offset_left = -226.0
+offset_top = -159.0
+offset_right = 219.0
+offset_bottom = 145.0
+text = "YOU WIN"
+horizontal_alignment = 1
+uppercase = true
